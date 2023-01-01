@@ -5,9 +5,9 @@ import axios from "axios";
 export default function SearchEngine(props) {
   const [temperature, setTemperature] = useState(null);
   const [location, setLocation] = useState(" ");
-  const [humidity, setHumidity] = useState(" ");
-  const [wind, setWind] = useState(" ");
-  const [icon, setIcon] = useState(" ");
+  const [, setHumidity] = useState(" ");
+  const [, setWind] = useState(" ");
+  const [, setIcon] = useState(" ");
   const [message, setMessage] = useState("");
 
   function ShowWeather(response) {
@@ -22,6 +22,8 @@ export default function SearchEngine(props) {
         <div> humidity: {response.data.main.humidity}%</div>
         <div> wind: {Math.round(response.data.wind.speed)}km/h</div>
         <img
+          alt="icon"
+          rel="noreferrer"
           src={`http://openweathermap.org/img/wn/${response.data.weather[3].icon}@2x.png`}
         />
       </div>
